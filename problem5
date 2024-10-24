@@ -1,0 +1,27 @@
+# problem5
+def prime_factors(number):
+    # Function to return 'Prime' if the number is prime, or its prime factors otherwise
+    def is_prime(n):
+        if n <= 1:
+            return False
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    if is_prime(number):
+        return 'Prime'
+
+    factors = []
+    divisor = 2
+    while number > 1:
+        while number % divisor == 0:
+            factors.append(divisor)
+            number //= divisor
+        divisor += 1
+
+    return factors
+
+# Example usage:
+print(prime_factors(584141))       # Output: 'Prime'
+print(prime_factors(1187968760))   # Output: [2, 2, 2, 5, 11, 29, 157, 593]
