@@ -6,4 +6,4 @@ def euclidean(a, b):
 
 a = 56
 b = 98
-print(f"The GCD of {a} and {b} is: {euclidean(a, b)}")
+print(f"{euclidean(a, b)}")
