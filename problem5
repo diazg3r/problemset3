@@ -1,4 +1,4 @@
-# problem5
+#problem5
 def prime_factors(number):
     # Function to return 'Prime' if the number is prime, or its prime factors otherwise
     def is_prime(n):
