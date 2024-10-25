@@ -1,0 +1,33 @@
+#problem18
+def rsa_encrypt(p, q, e, message):
+    n = p * q
+
+    message = message.replace(" ", "")
+    blocks = [message[i:i+2] for i in range(0, len(message), 2)]
+
+    # Convert the two-letter blocks to numbers
+    def to_number(block):
+        return int(f"{ord(block[0]) - 96:02}{ord(block[1]) - 96:02}")
+
+    message_numbers = [to_number(block) for block in blocks]
+
+
+    def mod_exp(base, exp, mod):
+        result = 1
+        while exp > 0:
+            if exp % 2 == 1:
+                result = (result * base) % mod
+            base = (base * base) % mod
+            exp //= 2
+        return result
+
+    encrypted_numbers = [mod_exp(num, e, n) for num in message_numbers]
+
+
+    return " ".join(f"{num:04}" for num in encrypted_numbers)
+# Example 
+p = 43
+q = 59
+e = 13
+message = "meet at noon"
+print(rsa_encrypt(p, q, e, message))
