@@ -1,0 +1,15 @@
+# problem15_1
+
+def affine_encrypt(a, b, word):
+    word_nums = [(ord(char) - ord('a')) for char in word]
+
+    encrypted_nums = [(a * num + b) % 26 for num in word_nums]
+
+    encrypted_word = ''.join([chr(num + ord('a')) for num in encrypted_nums])
+
+    return encrypted_word
+
+a = 5
+b = 2
+word = "fun"
+print(f"The encrypted word for a={a}, b={b}, and word='{word}' is: {affine_encrypt(a, b, word)}")
