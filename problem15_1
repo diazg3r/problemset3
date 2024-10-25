@@ -1,4 +1,4 @@
-# problem15_1
+#problem15_1
 
 def affine_encrypt(a, b, word):
     word_nums = [(ord(char) - ord('a')) for char in word]
@@ -12,4 +12,4 @@ def affine_encrypt(a, b, word):
 a = 5
 b = 2
 word = "fun"
-print(f"The encrypted word for a={a}, b={b}, and word='{word}' is: {affine_encrypt(a, b, word)}")
+print(f" {affine_encrypt(a, b, word)}")
