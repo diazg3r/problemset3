@@ -24,4 +24,4 @@ def affine_decrypt(a, b, word):
 a = 5
 b = 2
 word = "byp"
-print(f"The decrypted word for a={a}, b={b}, and word='{word}' is: {affine_decrypt(a, b, word)}")
+print(f" {affine_decrypt(a, b, word)}")
